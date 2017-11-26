@@ -17,6 +17,10 @@
 		E765960F1FC99D5B002CE476 /* MCHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E765960E1FC99D5B002CE476 /* MCHomeVC.m */; };
 		E76596161FC9A102002CE476 /* MCClassicGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596151FC9A102002CE476 /* MCClassicGameVC.m */; };
 		E76596191FC9A823002CE476 /* MCBlockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596181FC9A823002CE476 /* MCBlockItem.m */; };
+		E765961C1FC9AA31002CE476 /* MCBlockMoveItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E765961B1FC9AA31002CE476 /* MCBlockMoveItem.m */; };
+		E765961F1FC9C27C002CE476 /* MCBlockMergeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E765961E1FC9C27C002CE476 /* MCBlockMergeItem.m */; };
+		E76596251FC9CE67002CE476 /* MCClassicGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596241FC9CE67002CE476 /* MCClassicGame.m */; };
+		E76596281FC9D5FB002CE476 /* MCQueueCommandItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,14 @@
 		E76596151FC9A102002CE476 /* MCClassicGameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCClassicGameVC.m; sourceTree = "<group>"; };
 		E76596171FC9A823002CE476 /* MCBlockItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBlockItem.h; sourceTree = "<group>"; };
 		E76596181FC9A823002CE476 /* MCBlockItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCBlockItem.m; sourceTree = "<group>"; };
+		E765961A1FC9AA31002CE476 /* MCBlockMoveItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBlockMoveItem.h; sourceTree = "<group>"; };
+		E765961B1FC9AA31002CE476 /* MCBlockMoveItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCBlockMoveItem.m; sourceTree = "<group>"; };
+		E765961D1FC9C27C002CE476 /* MCBlockMergeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBlockMergeItem.h; sourceTree = "<group>"; };
+		E765961E1FC9C27C002CE476 /* MCBlockMergeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCBlockMergeItem.m; sourceTree = "<group>"; };
+		E76596231FC9CE67002CE476 /* MCClassicGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCClassicGame.h; sourceTree = "<group>"; };
+		E76596241FC9CE67002CE476 /* MCClassicGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCClassicGame.m; sourceTree = "<group>"; };
+		E76596261FC9D5FB002CE476 /* MCQueueCommandItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCQueueCommandItem.h; sourceTree = "<group>"; };
+		E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCQueueCommandItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +254,14 @@
 			children = (
 				E76596171FC9A823002CE476 /* MCBlockItem.h */,
 				E76596181FC9A823002CE476 /* MCBlockItem.m */,
+				E765961A1FC9AA31002CE476 /* MCBlockMoveItem.h */,
+				E765961B1FC9AA31002CE476 /* MCBlockMoveItem.m */,
+				E765961D1FC9C27C002CE476 /* MCBlockMergeItem.h */,
+				E765961E1FC9C27C002CE476 /* MCBlockMergeItem.m */,
+				E76596231FC9CE67002CE476 /* MCClassicGame.h */,
+				E76596241FC9CE67002CE476 /* MCClassicGame.m */,
+				E76596261FC9D5FB002CE476 /* MCQueueCommandItem.h */,
+				E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,10 +401,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76595DD1FC97026002CE476 /* main.m in Sources */,
+				E765961F1FC9C27C002CE476 /* MCBlockMergeItem.m in Sources */,
 				E76596161FC9A102002CE476 /* MCClassicGameVC.m in Sources */,
 				E765960F1FC99D5B002CE476 /* MCHomeVC.m in Sources */,
 				E76596191FC9A823002CE476 /* MCBlockItem.m in Sources */,
 				E76595CF1FC97026002CE476 /* AppDelegate.m in Sources */,
+				E76596251FC9CE67002CE476 /* MCClassicGame.m in Sources */,
+				E76596281FC9D5FB002CE476 /* MCQueueCommandItem.m in Sources */,
+				E765961C1FC9AA31002CE476 /* MCBlockMoveItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

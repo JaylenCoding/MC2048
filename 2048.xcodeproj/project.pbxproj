@@ -21,6 +21,10 @@
 		E765961F1FC9C27C002CE476 /* MCBlockMergeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E765961E1FC9C27C002CE476 /* MCBlockMergeItem.m */; };
 		E76596251FC9CE67002CE476 /* MCClassicGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596241FC9CE67002CE476 /* MCClassicGame.m */; };
 		E76596281FC9D5FB002CE476 /* MCQueueCommandItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */; };
+		E765962B1FCA88AC002CE476 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E765962A1FCA88AC002CE476 /* MCBlockView.m */; };
+		E765962E1FCA9108002CE476 /* MCAppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E765962D1FCA9108002CE476 /* MCAppearanceManager.m */; };
+		E76596351FCA9792002CE476 /* UIColor+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596341FCA9792002CE476 /* UIColor+Quick.m */; };
+		E76596381FCAAE14002CE476 /* MCScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596371FCAAE14002CE476 /* MCScoreView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,14 @@
 		E76596241FC9CE67002CE476 /* MCClassicGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCClassicGame.m; sourceTree = "<group>"; };
 		E76596261FC9D5FB002CE476 /* MCQueueCommandItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCQueueCommandItem.h; sourceTree = "<group>"; };
 		E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCQueueCommandItem.m; sourceTree = "<group>"; };
+		E76596291FCA88AC002CE476 /* MCBlockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBlockView.h; sourceTree = "<group>"; };
+		E765962A1FCA88AC002CE476 /* MCBlockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCBlockView.m; sourceTree = "<group>"; };
+		E765962C1FCA9108002CE476 /* MCAppearanceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppearanceManager.h; sourceTree = "<group>"; };
+		E765962D1FCA9108002CE476 /* MCAppearanceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppearanceManager.m; sourceTree = "<group>"; };
+		E76596331FCA9792002CE476 /* UIColor+Quick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Quick.h"; sourceTree = "<group>"; };
+		E76596341FCA9792002CE476 /* UIColor+Quick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Quick.m"; sourceTree = "<group>"; };
+		E76596361FCAAE14002CE476 /* MCScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCScoreView.h; sourceTree = "<group>"; };
+		E76596371FCAAE14002CE476 /* MCScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCScoreView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 				E76596101FC9A0D6002CE476 /* Game */,
 				E76596061FC971B2002CE476 /* Home */,
 				E76596001FC9712C002CE476 /* Main */,
+				E765962F1FCA95D1002CE476 /* Extension */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -245,6 +258,10 @@
 		E76596121FC9A0E1002CE476 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E76596291FCA88AC002CE476 /* MCBlockView.h */,
+				E765962A1FCA88AC002CE476 /* MCBlockView.m */,
+				E76596361FCAAE14002CE476 /* MCScoreView.h */,
+				E76596371FCAAE14002CE476 /* MCScoreView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +269,8 @@
 		E76596131FC9A0E5002CE476 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E765962C1FCA9108002CE476 /* MCAppearanceManager.h */,
+				E765962D1FCA9108002CE476 /* MCAppearanceManager.m */,
 				E76596171FC9A823002CE476 /* MCBlockItem.h */,
 				E76596181FC9A823002CE476 /* MCBlockItem.m */,
 				E765961A1FC9AA31002CE476 /* MCBlockMoveItem.h */,
@@ -264,6 +283,15 @@
 				E76596271FC9D5FB002CE476 /* MCQueueCommandItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E765962F1FCA95D1002CE476 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E76596331FCA9792002CE476 /* UIColor+Quick.h */,
+				E76596341FCA9792002CE476 /* UIColor+Quick.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,14 +428,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E765962B1FCA88AC002CE476 /* MCBlockView.m in Sources */,
 				E76595DD1FC97026002CE476 /* main.m in Sources */,
 				E765961F1FC9C27C002CE476 /* MCBlockMergeItem.m in Sources */,
+				E76596351FCA9792002CE476 /* UIColor+Quick.m in Sources */,
 				E76596161FC9A102002CE476 /* MCClassicGameVC.m in Sources */,
+				E765962E1FCA9108002CE476 /* MCAppearanceManager.m in Sources */,
 				E765960F1FC99D5B002CE476 /* MCHomeVC.m in Sources */,
 				E76596191FC9A823002CE476 /* MCBlockItem.m in Sources */,
 				E76595CF1FC97026002CE476 /* AppDelegate.m in Sources */,
 				E76596251FC9CE67002CE476 /* MCClassicGame.m in Sources */,
 				E76596281FC9D5FB002CE476 /* MCQueueCommandItem.m in Sources */,
+				E76596381FCAAE14002CE476 /* MCScoreView.m in Sources */,
 				E765961C1FC9AA31002CE476 /* MCBlockMoveItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

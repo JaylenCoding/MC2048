@@ -80,7 +80,7 @@
     // 判断棋盘是否为空
     BOOL emptySpotFound = NO;
     for (NSInteger i = 0; i < [self.boardState count]; ++i) {
-        if (((MCBlockItem *)self.boardState).empty) {
+        if (((MCBlockItem *)self.boardState[i]).empty) {
             emptySpotFound = YES;
             break;
         }
@@ -122,9 +122,8 @@
 
 #pragma mark - 位移API
 // 向指定位置位移并回调
-- (void)performMoveInDirection:(MCMoveDirection *)direction completion:(void (^)(BOOL))completion {
-    MCQueueCommandItem *command = [MCQueueCommandItem commandWithDirection:direction completion:completion];
-    [self queueComamnd:command];
+- (void)performMoveInDirection:(MCMoveDirection)direction completion:(void (^)(BOOL))completion {
+    [self queueComamnd:[MCQueueCommandItem commandWithDirection:direction completion:completion]];
 }
 
 - (BOOL)performMoveUp {

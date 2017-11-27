@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, MCMoveDirection){
 
 - (void)addBlockRandomWithVlue:(NSUInteger)value;
 
-- (void)performMoveInDirection:(MCMoveDirection *)direction
+- (void)performMoveInDirection:(MCMoveDirection)direction
                     completion:(void(^)(BOOL))completion;
 
 - (void)reset;

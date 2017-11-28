@@ -25,6 +25,13 @@
 		E765962E1FCA9108002CE476 /* MCAppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E765962D1FCA9108002CE476 /* MCAppearanceManager.m */; };
 		E76596351FCA9792002CE476 /* UIColor+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596341FCA9792002CE476 /* UIColor+Quick.m */; };
 		E76596381FCAAE14002CE476 /* MCScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596371FCAAE14002CE476 /* MCScoreView.m */; };
+		E765963B1FCAD185002CE476 /* MCGameboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E765963A1FCAD185002CE476 /* MCGameboardView.m */; };
+		E765963E1FCBB050002CE476 /* UIDevice+QucikJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = E765963D1FCBB050002CE476 /* UIDevice+QucikJudge.m */; };
+		E76596411FCBB2FC002CE476 /* MCPeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596401FCBB2FC002CE476 /* MCPeakView.m */; };
+		E76596441FCBB99C002CE476 /* MCBulletinView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76596431FCBB99C002CE476 /* MCBulletinView.m */; };
+		E79137B51FCCE23000AEAFB0 /* MCMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79137B41FCCE23000AEAFB0 /* MCMenuView.m */; };
+		E79137B81FCD044600AEAFB0 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79137B71FCD044600AEAFB0 /* MCNavigationController.m */; };
+		E79137BB1FCD055000AEAFB0 /* MCInterestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E79137BA1FCD055000AEAFB0 /* MCInterestVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +88,20 @@
 		E76596341FCA9792002CE476 /* UIColor+Quick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Quick.m"; sourceTree = "<group>"; };
 		E76596361FCAAE14002CE476 /* MCScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCScoreView.h; sourceTree = "<group>"; };
 		E76596371FCAAE14002CE476 /* MCScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCScoreView.m; sourceTree = "<group>"; };
+		E76596391FCAD185002CE476 /* MCGameboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCGameboardView.h; sourceTree = "<group>"; };
+		E765963A1FCAD185002CE476 /* MCGameboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCGameboardView.m; sourceTree = "<group>"; };
+		E765963C1FCBB050002CE476 /* UIDevice+QucikJudge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+QucikJudge.h"; sourceTree = "<group>"; };
+		E765963D1FCBB050002CE476 /* UIDevice+QucikJudge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+QucikJudge.m"; sourceTree = "<group>"; };
+		E765963F1FCBB2FC002CE476 /* MCPeakView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCPeakView.h; sourceTree = "<group>"; };
+		E76596401FCBB2FC002CE476 /* MCPeakView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCPeakView.m; sourceTree = "<group>"; };
+		E76596421FCBB99C002CE476 /* MCBulletinView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCBulletinView.h; sourceTree = "<group>"; };
+		E76596431FCBB99C002CE476 /* MCBulletinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCBulletinView.m; sourceTree = "<group>"; };
+		E79137B31FCCE23000AEAFB0 /* MCMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMenuView.h; sourceTree = "<group>"; };
+		E79137B41FCCE23000AEAFB0 /* MCMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMenuView.m; sourceTree = "<group>"; };
+		E79137B61FCD044600AEAFB0 /* MCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
+		E79137B71FCD044600AEAFB0 /* MCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
+		E79137B91FCD055000AEAFB0 /* MCInterestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCInterestVC.h; sourceTree = "<group>"; };
+		E79137BA1FCD055000AEAFB0 /* MCInterestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCInterestVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +206,8 @@
 		E76596011FC97131002CE476 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E79137B61FCD044600AEAFB0 /* MCNavigationController.h */,
+				E79137B71FCD044600AEAFB0 /* MCNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +215,8 @@
 		E76596021FC9713D002CE476 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E79137B31FCCE23000AEAFB0 /* MCMenuView.h */,
+				E79137B41FCCE23000AEAFB0 /* MCMenuView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +243,8 @@
 			children = (
 				E765960D1FC99D5B002CE476 /* MCHomeVC.h */,
 				E765960E1FC99D5B002CE476 /* MCHomeVC.m */,
+				E79137B91FCD055000AEAFB0 /* MCInterestVC.h */,
+				E79137BA1FCD055000AEAFB0 /* MCInterestVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +289,12 @@
 				E765962A1FCA88AC002CE476 /* MCBlockView.m */,
 				E76596361FCAAE14002CE476 /* MCScoreView.h */,
 				E76596371FCAAE14002CE476 /* MCScoreView.m */,
+				E76596391FCAD185002CE476 /* MCGameboardView.h */,
+				E765963A1FCAD185002CE476 /* MCGameboardView.m */,
+				E765963F1FCBB2FC002CE476 /* MCPeakView.h */,
+				E76596401FCBB2FC002CE476 /* MCPeakView.m */,
+				E76596421FCBB99C002CE476 /* MCBulletinView.h */,
+				E76596431FCBB99C002CE476 /* MCBulletinView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,6 +323,8 @@
 			children = (
 				E76596331FCA9792002CE476 /* UIColor+Quick.h */,
 				E76596341FCA9792002CE476 /* UIColor+Quick.m */,
+				E765963C1FCBB050002CE476 /* UIDevice+QucikJudge.h */,
+				E765963D1FCBB050002CE476 /* UIDevice+QucikJudge.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -431,16 +466,23 @@
 				E765962B1FCA88AC002CE476 /* MCBlockView.m in Sources */,
 				E76595DD1FC97026002CE476 /* main.m in Sources */,
 				E765961F1FC9C27C002CE476 /* MCBlockMergeItem.m in Sources */,
+				E79137B51FCCE23000AEAFB0 /* MCMenuView.m in Sources */,
+				E79137BB1FCD055000AEAFB0 /* MCInterestVC.m in Sources */,
+				E76596411FCBB2FC002CE476 /* MCPeakView.m in Sources */,
+				E79137B81FCD044600AEAFB0 /* MCNavigationController.m in Sources */,
 				E76596351FCA9792002CE476 /* UIColor+Quick.m in Sources */,
 				E76596161FC9A102002CE476 /* MCClassicGameVC.m in Sources */,
 				E765962E1FCA9108002CE476 /* MCAppearanceManager.m in Sources */,
 				E765960F1FC99D5B002CE476 /* MCHomeVC.m in Sources */,
+				E765963E1FCBB050002CE476 /* UIDevice+QucikJudge.m in Sources */,
 				E76596191FC9A823002CE476 /* MCBlockItem.m in Sources */,
 				E76595CF1FC97026002CE476 /* AppDelegate.m in Sources */,
 				E76596251FC9CE67002CE476 /* MCClassicGame.m in Sources */,
 				E76596281FC9D5FB002CE476 /* MCQueueCommandItem.m in Sources */,
 				E76596381FCAAE14002CE476 /* MCScoreView.m in Sources */,
 				E765961C1FC9AA31002CE476 /* MCBlockMoveItem.m in Sources */,
+				E765963B1FCAD185002CE476 /* MCGameboardView.m in Sources */,
+				E76596441FCBB99C002CE476 /* MCBulletinView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

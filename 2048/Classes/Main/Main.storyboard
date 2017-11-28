@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-3d-MkD">
-                                <rect key="frame" x="75" y="308.5" width="225" height="50"/>
+                                <rect key="frame" x="75" y="258.5" width="225" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.75082940924657537" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bjD-A7-Q0W"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-RT-fNd">
-                                <rect key="frame" x="75" y="178.5" width="225" height="50"/>
+                                <rect key="frame" x="75" y="128.5" width="225" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HxT-N9-eWi"/>
                                 </constraints>
@@ -55,17 +55,40 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-uX-hxT">
+                                <rect key="frame" x="75" y="358.5" width="225" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Cji-qY-ujq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="娱乐模式">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="extremityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dc7-vW-HM5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.90196078431372551" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AKF-uX-hxT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="31D-to-dVI"/>
                             <constraint firstItem="a7b-RT-fNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6LB-e9-z0b"/>
+                            <constraint firstItem="AKF-uX-hxT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QLq-Pe-TSg"/>
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YOr-de-jWD"/>
                             <constraint firstItem="a7b-RT-fNd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dRI-Ed-1cT"/>
+                            <constraint firstItem="AKF-uX-hxT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="jr0-Q7-kri"/>
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="top" secondItem="a7b-RT-fNd" secondAttribute="bottom" constant="80" id="kyV-gU-VpS"/>
-                            <constraint firstItem="iH6-3d-MkD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pP0-6T-a9A"/>
+                            <constraint firstItem="iH6-3d-MkD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="pP0-6T-a9A"/>
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="s8A-0W-VAp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lll-M2-odv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -52,7 +52,12 @@
 
 - (void)setGameTitle:(NSString *)gameTitle {
     _gameTitle = gameTitle;
-    self.textLabel.text = gameTitle;
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:gameTitle];
+    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                           size:48.0] range:NSMakeRange(0, 4)];
+    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                           size:18.0] range:NSMakeRange(4, gameTitle.length-4)];
+    self.textLabel.attributedText = str;
 }
 
 @end

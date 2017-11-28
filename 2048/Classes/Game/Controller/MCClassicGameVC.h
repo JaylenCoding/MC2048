@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 // 经典模式游戏委托方法
-@protocol MCClassicGameDelegate <NSObject>
+@protocol MCClassicGameControllerDelegate <NSObject>
 
 /**
  游戏结束调用
@@ -27,10 +27,13 @@
 // 经典模式控制器
 @interface MCClassicGameVC : UIViewController
 
-@property (nonatomic, weak) id<MCClassicGameDelegate> delegate;
+@property (nonatomic, weak) id<MCClassicGameControllerDelegate> delegate;
 
 + (instancetype)gameWithDimension:(NSUInteger)dimension
-                     winThreshold:(NSUInteger)threshold;
+                     winThreshold:(NSUInteger)threshold
+                        gameTitle:(NSString *)gameTitle
+                  backgroundColor:(UIColor *)backgroundColor
+                    swipeControls:(BOOL)swipeEnabled;
 
 @end
 

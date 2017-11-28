@@ -47,7 +47,7 @@
 
 - (void)setScore:(NSInteger)score {
     _score = score;
-    self.scoreLabel.text = [NSString stringWithFormat:@"分数\n%ld", self.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"分数\n%ld", (long)self.score];
 }
 
 @end

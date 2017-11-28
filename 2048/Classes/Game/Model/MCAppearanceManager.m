@@ -50,5 +50,4 @@
     return [UIFont fontWithName:@"HelveticaNeue-Bold" size:20];
 }
 
-
 @end

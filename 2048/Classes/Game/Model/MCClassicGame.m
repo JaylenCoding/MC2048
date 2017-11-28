@@ -36,6 +36,7 @@
 @property (nonatomic, strong) NSTimer *queueTimer;
 // 游戏数据
 @property (nonatomic, assign) NSInteger score;
+@property (nonatomic, assign) NSInteger peak;
 
 @end
 
@@ -54,6 +55,7 @@
 // 游戏重置方法
 - (void)reset {
     self.score = 0;
+    self.peak = 0;
     self.boardState = nil;
     [self.commandQueue removeAllObjects];
     [self.queueTimer invalidate];

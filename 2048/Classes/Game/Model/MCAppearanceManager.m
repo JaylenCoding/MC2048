@@ -47,7 +47,14 @@
 }
 
 - (UIFont *)fontForNumbers {
-    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:20];
+    CGFloat fontSize;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        fontSize = 40;
+    }
+    else {
+        fontSize = 20;
+    }
+    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontSize];
 }
 
 @end

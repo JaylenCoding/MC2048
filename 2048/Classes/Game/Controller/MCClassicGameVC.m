@@ -38,6 +38,10 @@
 @property (nonatomic, strong) MCBulletinView *bulletinView;
 @property (nonatomic, strong) UIButton *menuButton;
 @property (nonatomic, strong) UIButton *restartButton;
+@property (nonatomic, strong) UILabel *noticeLabel;
+
+// 游戏属性控件
+@property (nonatomic, strong) NSTimer *noticeTimer;
 
 // 游戏属性
 @property (nonatomic, copy) NSString *gameTitle;
@@ -92,7 +96,8 @@
     MCPeakView *peakView;
     MCBulletinView *bulletinView;
     
-    // 创建视图
+    /// 创建视图
+    // 添加分数板
     if (self.useScoreView) {
         scoreView = [MCScoreView scoreWithCornerRadius:6
                                        backgroundColor:DEFAULT_BOARD_BKG_COLOR
@@ -101,6 +106,7 @@
                                                                        size:16]];
         self.scoreView = scoreView;
     }
+    // 添加最高分板
     if (self.usePeakView) {
         peakView = [MCPeakView peakWithCornerRadius:6
                                     backgroundColor:DEFAULT_BOARD_BKG_COLOR
@@ -109,6 +115,7 @@
                                                                     size:16]];
         self.peakView = peakView;
     }
+    // 添加游戏名称板
     if (self.useBulletinView) {
         bulletinView = [MCBulletinView bulletinWithCornerRadius:6
                                                 backgroundColor:DEFAULT_BULLETIN_BKG_COLOR
@@ -118,18 +125,26 @@
         bulletinView.gameTitle = self.gameTitle;
         self.bulletinView = bulletinView;
     }
+    // 添加菜单按钮
     UIButton *menuButton = [[UIButton alloc] init];
     [menuButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     [menuButton setBackgroundColor:[UIColor colorWithR:227 g:155 b:101]];
     menuButton.layer.cornerRadius = 6;
     [menuButton setTitle:@"菜单" forState:UIControlStateNormal];
     self.menuButton = menuButton;
+    // 添加重置按钮
     UIButton *restartButton = [[UIButton alloc] init];
     [restartButton addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
     [restartButton setBackgroundColor:[UIColor colorWithR:227 g:155 b:101]];
     restartButton.layer.cornerRadius = 6;
     [restartButton setTitle:@"重置" forState:UIControlStateNormal];
     self.restartButton = restartButton;
+    // 添加通知标签
+    UILabel *noticeLabel = [[UILabel alloc] init];
+    noticeLabel.textAlignment = NSTextAlignmentCenter;
+    noticeLabel.font = [UIFont systemFontOfSize:16];
+    noticeLabel.textColor = [UIColor darkGrayColor];
+    self.noticeLabel = noticeLabel;
     
     // 生成游戏棋盘
     CGFloat padding = (self.dimension > 5) ? 3.0 : 6.0;
@@ -149,6 +164,8 @@
     CGFloat ctrButtonHeight;             // 控制按钮高度
     CGFloat gameboardTop;                // 棋盘顶端高度
     CGFloat bulletinHeight;              // 游戏信息块高度
+    CGFloat noticeLabelMargin;           // 通知标签与游戏棋盘间距
+    CGFloat noticeLabelHeight;           // 通知标签高度
     // 计算
     if ([[UIDevice currentDevice] isIphoneX]) {
         infoContainerTop = 54;
@@ -161,6 +178,8 @@
     ctrButtonHeight = 30;
     gameboardTop = 0.5*(self.view.frame.size.height - gameboard.frame.size.height);
     bulletinHeight = ctrButtonHeight + ctrButtonTop - infoContainerTop;
+    noticeLabelMargin = 40;
+    noticeLabelHeight = 60;
     
     // 添加分数板
     if (self.useScoreView) {
@@ -205,12 +224,20 @@
     restartButtonFrame.size.width = 0.25 * self.view.bounds.size.width;
     restartButton.frame = restartButtonFrame;
     [self.view addSubview:restartButton];
-    
+    // 添加游戏棋盘
     CGRect gameboardFrame = gameboard.frame;
     gameboardFrame.origin.x = 0.5 * (self.view.bounds.size.width - gameboardFrame.size.width);
     gameboardFrame.origin.y = gameboardTop;
     gameboard.frame = gameboardFrame;
     [self.view addSubview:gameboard];
+    // 添加标签
+    CGRect noticeFrame = noticeLabel.frame;
+    noticeFrame.origin.x = 0;
+    noticeFrame.origin.y = gameboardTop + self.dimension*(cellWidth+padding) + padding + noticeLabelMargin;
+    noticeFrame.size = CGSizeMake(self.view.frame.size.width, noticeLabelHeight);
+    noticeLabel.frame = noticeFrame;
+    [self.view addSubview:noticeLabel];
+    
     // 完成算高
     self.gameboard = gameboard;
     // 构造游戏模型
@@ -231,6 +258,7 @@
 - (void)followUp {
     if ([self.classicGame userHasWon]) {
         [self.delegate gameFinishedWithWin:YES score:self.classicGame.score peak:self.classicGame.peak];
+        self.gameboard.userInteractionEnabled = NO;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"胜利!" message:@"你胜利了!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
     }
@@ -245,6 +273,7 @@
         if ([self.classicGame isUserLost]) {
             [self.delegate gameFinishedWithWin:NO score:self.classicGame.score peak:self.classicGame.peak];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"失败!" message:@"你失败了!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            self.gameboard.userInteractionEnabled = NO;
             [alert show];
         }
     }
@@ -272,6 +301,10 @@
 }
 
 #pragma mark - MCMenuViewDelegate代理方法实现
+- (void)menuShouldShared {
+    MCLOG(@"需要分享");
+}
+
 - (void)menuShouldQuit:(MCMenuView *)menuView {
     [menuView removeFromSuperview];
     self.gameboard.userInteractionEnabled = YES;
@@ -329,9 +362,15 @@
     self.gameboard.userInteractionEnabled = NO;
     MCMenuView *view = [MCMenuView menuWithBackgroundColor:DEFAULT_BOARD_BKG_COLOR
                                             tapQuitEnabled:YES
-                                             sharedEnabled:YES];
+                                             sharedEnabled:NO];
     view.delegate = self;
     [self.view addSubview:view];
+}
+
+#pragma mark - 数据setter
+- (void)setGameNotice:(NSString *)gameNotice {
+    _gameNotice = gameNotice;
+    self.noticeLabel.text = gameNotice;
 }
 
 @end

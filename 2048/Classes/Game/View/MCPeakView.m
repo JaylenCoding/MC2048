@@ -44,7 +44,7 @@
 
 - (void)setPeak:(NSInteger)peak {
     _peak = peak;
-    self.peakLabel.text = [NSString stringWithFormat:@"最高\n%ld", self.peak];
+    self.peakLabel.text = [NSString stringWithFormat:@"最高\n%ld", (long)self.peak];
 }
 
 @end

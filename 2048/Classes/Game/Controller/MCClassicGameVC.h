@@ -28,6 +28,7 @@
 @interface MCClassicGameVC : UIViewController
 
 @property (nonatomic, weak) id<MCClassicGameControllerDelegate> delegate;
+@property (nonatomic, copy) NSString *gameNotice;
 
 + (instancetype)gameWithDimension:(NSUInteger)dimension
                      winThreshold:(NSUInteger)threshold

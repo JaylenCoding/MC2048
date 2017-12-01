@@ -66,6 +66,7 @@
         [view removeFromSuperview];
     }
     [self.blocksDict removeAllObjects];
+    self.userInteractionEnabled = YES;
 }
 
 - (void)setBackgroundWithBackgroundColor:(UIColor *)backgroundColor andForegroundColor:(UIColor *)foregroundColor {

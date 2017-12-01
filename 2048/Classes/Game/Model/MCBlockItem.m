@@ -21,7 +21,7 @@
     if (self.empty) {
         return @"方块: (空)";
     }
-    return [NSString stringWithFormat:@"方块: (%lu)", self.value];
+    return [NSString stringWithFormat:@"方块: (%lu)", (unsigned long)self.value];
 }
 
 @end

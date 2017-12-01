@@ -13,6 +13,9 @@
         <array key="ArialRoundedMTBold.ttf">
             <string>ArialRoundedMTBold</string>
         </array>
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--HomeVC-->
@@ -28,10 +31,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-3d-MkD">
-                                <rect key="frame" x="75" y="258.5" width="225" height="50"/>
+                                <rect key="frame" x="75" y="253.5" width="225" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.75082940924657537" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bjD-A7-Q0W"/>
+                                    <constraint firstAttribute="height" constant="60" id="bjD-A7-Q0W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="经典模式">
@@ -47,19 +50,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-RT-fNd">
-                                <rect key="frame" x="75" y="128.5" width="225" height="50"/>
+                                <rect key="frame" x="75" y="113.5" width="225" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="HxT-N9-eWi"/>
+                                    <constraint firstAttribute="height" constant="80" id="HxT-N9-eWi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="64"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-uX-hxT">
-                                <rect key="frame" x="75" y="358.5" width="225" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="75" y="353.5" width="225" height="60"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Cji-qY-ujq"/>
+                                    <constraint firstAttribute="height" constant="60" id="Cji-qY-ujq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="娱乐模式">
@@ -83,16 +86,147 @@
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YOr-de-jWD"/>
                             <constraint firstItem="a7b-RT-fNd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dRI-Ed-1cT"/>
                             <constraint firstItem="AKF-uX-hxT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="jr0-Q7-kri"/>
-                            <constraint firstItem="iH6-3d-MkD" firstAttribute="top" secondItem="a7b-RT-fNd" secondAttribute="bottom" constant="80" id="kyV-gU-VpS"/>
+                            <constraint firstItem="iH6-3d-MkD" firstAttribute="top" secondItem="a7b-RT-fNd" secondAttribute="bottom" constant="60" id="kyV-gU-VpS"/>
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="pP0-6T-a9A"/>
                             <constraint firstItem="iH6-3d-MkD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="s8A-0W-VAp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lll-M2-odv"/>
+                    <connections>
+                        <outlet property="classicButton" destination="iH6-3d-MkD" id="JII-L7-1gq"/>
+                        <outlet property="intersetButton" destination="AKF-uX-hxT" id="bZO-2p-djP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7" y="61"/>
+        </scene>
+        <!--InterestVC-->
+        <scene sceneID="p7C-ul-vsx">
+            <objects>
+                <viewController storyboardIdentifier="interestVC" id="K5d-xs-vPs" customClass="MCInterestVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Xn-ej-3NF"/>
+                        <viewControllerLayoutGuide type="bottom" id="cST-AB-GVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ygv-WP-j5G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="娱乐模式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qk-Sl-Klk">
+                                <rect key="frame" x="80" y="83.5" width="216" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="l2z-dk-Ey9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="54"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM4-LZ-ix7">
+                                <rect key="frame" x="75" y="223.5" width="225" height="60"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gmv-hx-Ocx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="3×3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="extremityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6m9-gg-eIw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjm-U0-SMf">
+                                <rect key="frame" x="75" y="313.5" width="225" height="60"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Im8-5R-lpB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="5×5">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="extremityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YTY-rQ-Gkp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvV-ii-d52">
+                                <rect key="frame" x="75" y="403.5" width="225" height="60"/>
+                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QMR-MB-bd7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="噩梦模式">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="extremityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QFl-va-8kM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9Z-NO-glZ">
+                                <rect key="frame" x="75" y="493.5" width="225" height="60"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.90196078431372551" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Q4q-Oq-PPi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="extremityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Q2-Iy-l0s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NvV-ii-d52" firstAttribute="width" secondItem="Ygv-WP-j5G" secondAttribute="width" multiplier="0.6" id="0SD-To-qQe"/>
+                            <constraint firstItem="NvV-ii-d52" firstAttribute="top" secondItem="pjm-U0-SMf" secondAttribute="bottom" constant="30" id="0gH-mY-Gu6"/>
+                            <constraint firstItem="l9Z-NO-glZ" firstAttribute="centerX" secondItem="Ygv-WP-j5G" secondAttribute="centerX" id="1rz-j9-T05"/>
+                            <constraint firstItem="pjm-U0-SMf" firstAttribute="top" secondItem="lM4-LZ-ix7" secondAttribute="bottom" constant="30" id="2Qe-VT-ehM"/>
+                            <constraint firstItem="lM4-LZ-ix7" firstAttribute="centerX" secondItem="Ygv-WP-j5G" secondAttribute="centerX" id="6XC-FG-cfJ"/>
+                            <constraint firstItem="lM4-LZ-ix7" firstAttribute="top" secondItem="3Qk-Sl-Klk" secondAttribute="bottom" constant="60" id="AxX-40-qRF"/>
+                            <constraint firstItem="pjm-U0-SMf" firstAttribute="width" secondItem="Ygv-WP-j5G" secondAttribute="width" multiplier="0.6" id="OT5-zV-4LT"/>
+                            <constraint firstItem="l9Z-NO-glZ" firstAttribute="top" secondItem="NvV-ii-d52" secondAttribute="bottom" constant="30" id="OXQ-W8-m3s"/>
+                            <constraint firstItem="pjm-U0-SMf" firstAttribute="centerX" secondItem="Ygv-WP-j5G" secondAttribute="centerX" id="QBd-yQ-8bA"/>
+                            <constraint firstItem="l9Z-NO-glZ" firstAttribute="width" secondItem="Ygv-WP-j5G" secondAttribute="width" multiplier="0.6" id="ca9-S1-m8c"/>
+                            <constraint firstItem="NvV-ii-d52" firstAttribute="centerX" secondItem="Ygv-WP-j5G" secondAttribute="centerX" id="hkc-vB-664"/>
+                            <constraint firstItem="lM4-LZ-ix7" firstAttribute="width" secondItem="Ygv-WP-j5G" secondAttribute="width" multiplier="0.6" id="j5q-M9-PtC"/>
+                            <constraint firstItem="lM4-LZ-ix7" firstAttribute="centerY" secondItem="Ygv-WP-j5G" secondAttribute="centerY" constant="-80" id="jhb-cJ-vFb"/>
+                            <constraint firstItem="3Qk-Sl-Klk" firstAttribute="centerX" secondItem="Ygv-WP-j5G" secondAttribute="centerX" id="wnI-SE-I4p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="l9Z-NO-glZ" id="frc-kU-yEk"/>
+                        <outlet property="mode33Button" destination="lM4-LZ-ix7" id="Kms-DS-9x6"/>
+                        <outlet property="mode55Button" destination="pjm-U0-SMf" id="bt7-eA-wTA"/>
+                        <outlet property="modeNMButton" destination="NvV-ii-d52" id="WVr-da-etY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REh-HX-kfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="61"/>
         </scene>
     </scenes>
 </document>

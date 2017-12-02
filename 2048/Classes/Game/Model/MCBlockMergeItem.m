@@ -33,7 +33,7 @@
         case MCBlockMergeModeDoubleCombine:
             str = @"两个同时移动并组合";
     }
-    return [NSString stringWithFormat:@"操作: %@, 索引1: %ld, 索引2: %ld, 值:%ld", str, (long)self.index1, self.index2, self.value];
+    return [NSString stringWithFormat:@"操作: %@, 索引1: %zd, 索引2: %zd, 值:%zd", str, self.index1, self.index2, self.value];
 }
 
 @end

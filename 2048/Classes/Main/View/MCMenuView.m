@@ -33,12 +33,14 @@
 @property (nonatomic, strong) UIView *menuContainer;
 @property (nonatomic, strong) UIButton *sharedButton;
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 // 游戏属性
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) BOOL sharedEnabled;           // 分享
 @property (nonatomic, assign) BOOL backEnabled;             // 返回主菜单
 @property (nonatomic, assign) BOOL tapQuitEnabled;          // 取消
+@property (nonatomic, assign) BOOL cancelEnabled;           // 取消按钮
 
 // 游戏UI属性
 @property (nonatomic, strong) UIColor *menuBackgroundColor;
@@ -55,6 +57,7 @@
     view.sharedEnabled = sharedEnabled;
     view.tapQuitEnabled = YES;
     view.backEnabled = YES;
+    view.cancelEnabled = YES;
     [view setupView];
     return view;
 }
@@ -70,12 +73,13 @@
     self.count = 0;
     if (self.sharedEnabled) self.count++;
     if (self.backEnabled) self.count++;
+    if (self.cancelEnabled) self.count++;
     // 创建背景遮罩视图
     UIView *bkgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     bkgView.backgroundColor = [UIColor darkGrayColor];
     bkgView.alpha = 0;
     if (self.tapQuitEnabled) {
-        [bkgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelButtonTapped)]];
+        [bkgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelButtonTappedWithSender:animated:)]];
     }
     bkgView.userInteractionEnabled = NO;
     [self addSubview:bkgView];
@@ -108,7 +112,6 @@
         self.sharedButton = sharedButton;
         yCursor += menuItemHeight + 1;
     }
-    
     // 生成返回主菜单按钮
     if (self.backEnabled) {
         UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(xCursor, yCursor, menuWidth, menuItemHeight)];
@@ -118,6 +121,18 @@
         [backButton addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         [self.menuContainer addSubview:backButton];
         self.sharedButton = backButton;
+        yCursor += menuItemHeight + 1;
+    }
+    // 生成取消按钮
+    if (self.cancelEnabled) {
+        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(xCursor, yCursor, menuWidth, menuItemHeight)];
+        [cancelButton setTitle:@"取消" forState: UIControlStateNormal];
+        [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        cancelButton.titleLabel.font = [UIFont systemFontOfSize:20];
+        [cancelButton addTarget:self action:@selector(cancelButtonTappedWithSender:animated:) forControlEvents:UIControlEventTouchUpInside];
+        [self.menuContainer addSubview:cancelButton];
+        self.cancelButton = cancelButton;
+        yCursor += menuItemHeight + 1;
     }
     
     /// 绘制线条
@@ -163,7 +178,17 @@
 
 /// 逻辑响应API
 // 菜单--取消
-- (void)cancelButtonTapped {
+- (void)cancelButtonTappedWithSender:(UIButton *)sender animated:(BOOL)animated {
+    if (!sender && !animated) {
+        if ([self.delegate respondsToSelector:@selector(menuShouldQuit:)]) {
+            [self.delegate menuShouldQuit:self];
+        }
+        else {
+            MCLOG(@"menuShouldQuit:方法未实现");
+        }
+        return;
+    }
+    
     self.userInteractionEnabled = NO;
     // 背景遮罩消失动画
     [UIView animateWithDuration:BKG_EXPAND_TIME

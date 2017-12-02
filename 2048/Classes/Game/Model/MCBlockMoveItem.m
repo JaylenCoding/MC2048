@@ -31,10 +31,10 @@
 
 - (NSString *)description {
     if (self.isDoubleMove) {
-        return [NSString stringWithFormat:@"方块单步移动: (从 %ld 和 %ld 到 %ld , 新的值为: %ld)", (unsigned long)self.source1, self.source2, self.destination, self.value];
+        return [NSString stringWithFormat:@"方块单步移动: (从 %zd 和 %zd 到 %zd , 新的值为: %zd)", self.source1, self.source2, self.destination, self.value];
     }
     else {
-        return [NSString stringWithFormat:@"方块同步移动: (从 %ld 到 %ld , 新的值为: %ld)", (unsigned long)self.source1, self.destination, self.value];
+        return [NSString stringWithFormat:@"方块同步移动: (从 %zd 到 %zd , 新的值为: %zd)", self.source1, self.destination, self.value];
     }
 }
 

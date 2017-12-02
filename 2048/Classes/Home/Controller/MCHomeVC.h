@@ -10,4 +10,7 @@
 
 @interface MCHomeVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *classicButton;
+@property (weak, nonatomic) IBOutlet UIButton *intersetButton;
+
 @end

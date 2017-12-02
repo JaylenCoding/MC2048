@@ -76,7 +76,7 @@
 - (void)dismissAnimationWithContext:(id<UIViewControllerContextTransitioning>)transitionContext {
     MCInterestVC *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     MCHomeVC *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIView *containerView = [transitionContext containerView];
+//    UIView *containerView = [transitionContext containerView];
     // 绘制路径
     UIBezierPath *beginPath = [UIBezierPath bezierPathWithRect:[UIScreen mainScreen].bounds];
     UIBezierPath *endPath = [UIBezierPath bezierPathWithRect:toVC.intersetButton.frame];

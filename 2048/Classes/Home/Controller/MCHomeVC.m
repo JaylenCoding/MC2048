@@ -7,6 +7,7 @@
 //
 
 #import "MCHomeVC.h"
+#import "MCInterestVC.h"
 
 #import "MCClassicGameVC.h"
 
@@ -33,16 +34,14 @@
                                                    gameTitle:@"2048\n经典模式"
                                              backgroundColor:[UIColor whiteColor]
                                                swipeControls:YES];
-    
+    vc.gameNotice = @"达到1024以获得胜利";
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)extremityButtonTapped:(id)sender {
-    MCClassicGameVC *vc = [MCClassicGameVC gameWithDimension:10
-                                                winThreshold:8192
-                                                   gameTitle:@"2048\n极限模式"
-                                             backgroundColor:[UIColor whiteColor]
-                                               swipeControls:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MCInterestVC *vc = [storyboard instantiateViewControllerWithIdentifier:@"interestVC"];
+//    MCInterestVC *vc = [[MCInterestVC alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
